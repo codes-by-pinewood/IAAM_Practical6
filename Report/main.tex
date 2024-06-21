@@ -28,7 +28,7 @@
 \subsection*{Slices and Aspect Ratio}
 The image has 16 slices. The aspect ratio can be defined as the ratio of total width (total number of columns) and the total height (total number of rows). In that case it is 160/140 which is 1.143. 
 
-\subsection*{Function to display the contents of the 3D image}
+\subsection*{Function to display the contents of the 3D image} \label{sec:contents-3D_image}
 The code snippet below shows the function for displaying the slices of the image.  
 \begin{lstlisting}
 import numpy as np
@@ -49,8 +49,9 @@ plt.tight_layout()
 plt.show()
 \end{lstlisting}
 
-
+The results of this function are show in Appendix: Figure \ref{fig:3d-plane-image}
 \section*{Question 2}
+\subsection*{Thresholding and best value}
 We applied thresholding on the chromo.tiff image using the diplib library in Python and using VAA3D software. Figure \ref{fig:otsu-median} shows the result of the Otsu Threshold (left) and the result of Otsu threshold with median filter (right). 
 
 \begin{figure}%
@@ -64,6 +65,22 @@ We applied thresholding on the chromo.tiff image using the diplib library in Pyt
 
 Figure \ref{fig:vaa3dthresh} shows the result of the VAA3D software. As seen in figure \ref{fig:vaa3dthresh} the best threshold value is 55. 
 
+\subsection*{Algorithm for Depth Cuing}
+
+\begin{algorithm}[h!]
+\caption{Depth Cuing}\label{algo:depth-cuing}
+\begin{algorithmic}[1]
+\Procedure{Depth Cuing}{$\text{images}$}
+    \State $\text{intensity_values} \gets \text{linspace(0, 255)}$
+    \State $\text{all_slices} \gets []$
+    \State \textbf{return} $\text{minimum\_x}$
+    $\text{minimum\_y}$, $\text{width}$, $\text{height}$ 
+    \For i in range(16)
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{Report/Images/vaa3d_thresh.png}
@@ -71,13 +88,47 @@ Figure \ref{fig:vaa3dthresh} shows the result of the VAA3D software. As seen in 
     \label{fig:vaa3dthresh}
 \end{figure}
 
-\section*{Difference Between Figure 1 and 2}
+\subsection*{Depth Cuing}
+Figure \ref{fig:depthcuing} shows the result of depth cuing. 
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{Report/Images/mip.png}
+    \caption{Chromo.tiff with depth cuing}
+    \label{fig:depthcuing}
+\end{figure}
 
 The first image is a raw image obtained before processing techniques such as thresholding, median filter and contrast stretching. Thus it looks out of focus, blurry and underexposed. The second image is the product of these image analysis methods and the original image. 
 
 
 
-\bibliographystyle{alpha}
-\bibliography{sample}
+
+\section*{Question 3}
+\subsection*{Maximum Projection and Alpha Function}
+As instructed in the file, the contrast was varied. In addition to this, the thickness \textbf{Z-thick} was also varied, to understand the effect on the contrast. \\The video files were generated for both maximum projection and alpha function, and are submitted along with this file. 
+
+\medskip
+
+\textbf{Maximum Projection} : File Name - \textit{chromo-MIP\_Contrast.mp4}
+
+\textbf{Alpha Projection} : File Name - \textit{chromo-Alpha\_Contrast.mp4}
+\subsection*{Surface Visualization}
+\subsection*{Volume and Surface Visualization}
+\section*{Question 4}
+\subsection*{Static 3D Visualization}
+\subsection*{Improving Signal Strength}
+\subsection*{Automated Deconvolution}
+\subsection*{Manual Deconvolution}
+\subsection*{Visualizations}
+\clearpage
+\section*{Appendix}
+\subsection*{Function to display image content in planes}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\linewidth]{Report/Images/3d_plot.png}
+    \caption{The results of the function discussed in \ref{sec:contents-3D_image}}
+    \label{fig:3d-plane-image}
+\end{figure}
+% \bibliographystyle{alpha}
+% \bibliography{sample}
 
 \end{document}
