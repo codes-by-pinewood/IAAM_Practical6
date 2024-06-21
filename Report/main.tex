@@ -58,12 +58,18 @@ We applied thresholding on the chromo.tiff image using the diplib library in Pyt
     \subfloat[\centering label 1]{{\includegraphics[width=0.45\textwidth]{Report/Images/otsu_threshold_image.png} }} \label{fig:Otsu}%
     \qquad
     \subfloat[\centering label 2]{{\includegraphics[width=0.45\textwidth]{Report/Images/median_filter.png} }}%
-    \caption{2 Chromo.tiff with otsu threshold (left) and median filter and otsu threshold (right)}%
+    \caption{Chromo.tiff with otsu threshold (left) and median filter and otsu threshold (right)}%
     \label{fig:otsu-median}%
 \end{figure}
 
-Figure 2 shows the result of the VAA3D software. As seen in figure 2 the best threshold value is 55. 
-%As seen in figure 1 the result of the Otsu Threshold is s
+Figure \ref{fig:vaa3dthresh} shows the result of the VAA3D software. As seen in figure \ref{fig:vaa3dthresh} the best threshold value is 55. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{Report/Images/vaa3d_thresh.png}
+    \caption{Chromo.tiff image thresholded in VAA3D}
+    \label{fig:vaa3dthresh}
+\end{figure}
 
 \section*{Difference Between Figure 1 and 2}
 
