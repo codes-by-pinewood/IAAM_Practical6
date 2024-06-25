@@ -52,22 +52,22 @@ for i in range(num_slices):
 plt.tight_layout()
 plt.show()
 \end{lstlisting}
-
 The results of this function are show in Appendix: Figure \ref{fig:3d-plane-image}. 
+\clearpage
 \section*{Question 2}
 \subsection*{Thresholding and best value}
-We applied thresholding on the chromo.tiff image using the diplib library in Python and using VAA3D software. Figure \ref{fig:Otsu} shows the result of the Otsu Threshold (left) and the result of Otsu threshold with median filter (right). 
+Thresholding was done on the chromo.tiff image using the \textit{diplib} library in Python and using VAA3D software.\\Figure \ref{fig:thresholding} shows the result of the Otsu Threshold (\ref{fig:otsu}) and the result of Otsu threshold with median filter (\ref{fig:median_otsu}). 
 
-\begin{figure}%
-    \centering
-    \subfloat[\centering Otsu Thresholding]{{\includegraphics[width=0.45\textwidth]{Report/Images/otsu_threshold_image.png} }} \label{fig:Otsu}%
-    \qquad
-    \subfloat[\centering Median Filter and Otsu Thresholding]{{\includegraphics[width=0.45\textwidth]{Report/Images/median_filter.png} }}%
-    \caption{Chromo.tiff with Otsu threshold and Median filter and Otsu threshold}%
-    \label{fig:Otsu}%
+\begin{figure}[h!]
+\centering
+\subfloat{\label{fig:otsu}\includegraphics[width=0.5\textwidth]{Report/Images/otsu_threshold_image.png}}
+\subfloat{\label{fig:median_otsu}\includegraphics[width=0.5\textwidth]{Report/Images/median_filter.png}}
+\caption{(a) Chromo.tiff with Otsu Threshold, and (b) Chromo.tiff with Median Filter and Otsu Threshold}
+\label{fig:thresholding}
 \end{figure}
 
-Figure \ref{fig:vaa3dthresh} shows the result of the Vaa3D software. As seen in figure \ref{fig:vaa3dthresh} the best threshold value is 55. 
+
+Figure \ref{fig:vaa3dthresh} shows the result of the Vaa3D software. As seen in figure \ref{fig:vaa3dthresh}, the best threshold value is 55. 
 
 \begin{figure}[h!]
     \centering
@@ -79,10 +79,10 @@ Figure \ref{fig:vaa3dthresh} shows the result of the Vaa3D software. As seen in 
 
 
 \subsection*{Algorithm for Depth Cuing}
-The figure \ref{fig:depth-cuing} shows the algorithm for depth cuing. As shown in the algorithm 16 evenly spaced values are taken from the range 0 to 255 and the slices are thresholded with the values. Slices lower in the plane are thresholded with lower values and slices higher in the plane are thresholded iwth higher values. %with higher   
-\begin{figure}
+The figure \ref{fig:depth-cuing} shows the algorithm for depth cuing. As shown in the algorithm, 16 evenly spaced values are taken from the range 0 to 255 and the slices are thresholded with the values. Slices lower in the plane are thresholded with lower values and slices higher in the plane are thresholded iwth higher values. %with higher   
+\begin{figure}[h!]
     \centering
-    \includegraphics[width=0.5\linewidth]{Report/Images/depth_cuing.png}
+    \includegraphics[width=0.8\linewidth]{Report/Images/depth_cuing.png}
     \caption{Algorithm for depth cuing }
     \label{fig:depth-cuing}
 \end{figure}
@@ -91,19 +91,19 @@ The figure \ref{fig:depth-cuing} shows the algorithm for depth cuing. As shown i
 
 
 \subsection*{Depth Cuing}
-Figure \ref{fig:depthcuing} shows the result of depth cuing. 
-\begin{figure}
+Figure \ref{fig:depth-cuing-results} shows the result of depth cuing. 
+\begin{figure}[h!]
     \centering
     \includegraphics[width=1\linewidth]{Report/Images/mip.png}
     \caption{Chromo.tiff with depth cuing}
-    \label{fig:depthcuing}
+    \label{fig:depth-cuing-results}
 \end{figure}
 
 The first image is a raw image obtained before processing techniques such as thresholding, median filter and contrast stretching. Thus it looks out of focus, blurry and underexposed. The second image is the product of these image analysis methods and the original image. 
 
 
 
-
+\clearpage
 \section*{Question 3}
 \subsection*{Maximum Projection and Alpha Function}
 As instructed in the file, the contrast was varied. In addition to this, the thickness \textbf{Z-thick} was also varied, to understand the effect on the contrast. \\The video files were generated for both maximum projection and alpha function, and are submitted along with this file. 
@@ -114,133 +114,162 @@ As instructed in the file, the contrast was varied. In addition to this, the thi
 
 \textbf{Alpha Projection} : File Name - \textit{chromo-Alpha\_Contrast.mp4}
 \subsection*{Surface Visualization}
+For the given image, the lower and upper ranges were varied between [0,75], [75,150] and [150,255]. In addition to varying the ranges, the mesh density was also varied between [25,50,75,100].
+\begin{itemize}
+    \item Figures \ref{fig:surface_vis_0_75-25}, \ref{fig:surface_vis_0_75-50}, \ref{fig:surface_vis_0_75-75} and \ref{fig:surface_vis_0_75-100} capture the results, when the lower range is 0 and the upper range is 75, with the mesh density as 25, 50, 75, 100 respectively. 
+    \item Figures \ref{fig:surface_vis_75_150-25}, \ref{fig:surface_vis_75_150-50}, \ref{fig:surface_vis_75_150-75} and \ref{fig:surface_vis_75_150-100} capture the results, when the lower range is 75 and the upper range is 150, with the mesh density as 25, 50, 75, 100 respectively.
+    \item Figures \ref{fig:surface_vis_150_255-25}, \ref{fig:surface_vis_150_255-50}, \ref{fig:surface_vis_150_255-75} and \ref{fig:surface_vis_150_255-100} capture the results, when the lower range is 150 and the upper range is 255, with the mesh density as 25, 50, 75, 100 respectively. 
+\end{itemize}
 
-\begin{figure}
+\begin{figure}[h!]
     \centering
     \includegraphics[width=0.3\linewidth]{Report/Images/6.3.2/0-75,25.png}
     \includegraphics[width=0.3\linewidth]{Report/Images/6.3.2/0-75,25-rotated.png}
     \includegraphics[width=0.3\linewidth]{Report/Images/6.3.2/0-75,25-sliced.png}
     \caption{Threshold: 0-75, mesh density:25, original (left), rotated (middle), cross-section(right)}
-    \label{fig:enter-label}
+    \label{fig:surface_vis_0_75-25}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h!]
     \centering
     \includegraphics[width=0.3\linewidth]{Report/Images/6.3.2/0-75,50.png}
     \includegraphics[width=0.3\linewidth]{Report/Images/6.3.2/0-75,50-rotated.png}
     \includegraphics[width=0.3\linewidth]{Report/Images/6.3.2/0-75,50-sliced.png}
     \caption{Threshold: 0-75, mesh density:50, original (left), rotated (middle), cross-section(right)}
-    \label{fig:enter-label}
+    \label{fig:surface_vis_0_75-50}
 \end{figure}
 
 
-\begin{figure}
+\begin{figure}[h!]
     \centering
     \includegraphics[width=0.3\linewidth]{Report/Images/6.3.2/0-75,75.png}
     \includegraphics[width=0.3\linewidth]{Report/Images/6.3.2/0-75,75-rotated.png}
     \includegraphics[width=0.3\linewidth]{Report/Images/6.3.2/0-75,75-sliced.png}
     \caption{Threshold: 0-75, mesh density:75, original (left), rotated (middle), cross-section(right)}
-    \label{fig:enter-label}
+    \label{fig:surface_vis_0_75-75}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h!]
     \centering
     \includegraphics[width=0.3\linewidth]{Report/Images/6.3.2/0-75,100.png}
     \includegraphics[width=0.3\linewidth]{Report/Images/6.3.2/0-75,100-rotated.png}
     \includegraphics[width=0.3\linewidth]{Report/Images/6.3.2/0-75,100-sliced.png}
     \caption{Threshold: 0-75, mesh density:100, original (left), rotated (middle), cross-section(right)}
-    \label{fig:enter-label}
+    \label{fig:surface_vis_0_75-100}
 \end{figure}
 
 
-\begin{figure}
+\begin{figure}[h!]
     \centering
     \includegraphics[width=0.3\linewidth]{Report/Images/6.3.2/75-150,25.png}
     \includegraphics[width=0.3\linewidth]{Report/Images/6.3.2/75-150,25-rotated.png}
     \includegraphics[width=0.3\linewidth]{Report/Images/6.3.2/75-150,25-sliced.png}
     \caption{Threshold: 75-150, mesh density:25, original (left), rotated (middle), cross-section(right)}
-    \label{fig:enter-label}
+    \label{fig:surface_vis_75_150-25}
 \end{figure}
 
 
-\begin{figure}
+\begin{figure}[h!]
     \centering
     \includegraphics[width=0.3\linewidth]{Report/Images/6.3.2/75-150,50.png}
     \includegraphics[width=0.3\linewidth]{Report/Images/6.3.2/75-150,50-rotated.png}
     \includegraphics[width=0.3\linewidth]{Report/Images/6.3.2/75-150,50-sliced.png}
     \caption{Threshold: 75-150, mesh density:50, original (left), rotated (middle), cross-section(right)}
-    \label{fig:enter-label}
+    \label{fig:surface_vis_75_150-50}
 \end{figure}
 
 
-\begin{figure}
+\begin{figure}[h!]
     \centering
     \includegraphics[width=0.3\linewidth]{Report/Images/6.3.2/75-150,75.png}
     \includegraphics[width=0.3\linewidth]{Report/Images/6.3.2/75-150,75-rotated.png}
     \includegraphics[width=0.3\linewidth]{Report/Images/6.3.2/75-150,75-sliced.png}
     \caption{Threshold: 75-150, mesh density:75, original (left), rotated (middle), cross-section(right)}
-    \label{fig:enter-label}
+    \label{fig:surface_vis_75_150-75}
 \end{figure}
 
 
-\begin{figure}
+\begin{figure}[h!]
     \centering
     \includegraphics[width=0.3\linewidth]{Report/Images/6.3.2/75-150,100.png}
     \includegraphics[width=0.3\linewidth]{Report/Images/6.3.2/75-150,100-rotated.png}
     \includegraphics[width=0.3\linewidth]{Report/Images/6.3.2/75-150,100-sliced.png}
     \caption{Threshold: 75-150, mesh density:100, original (left), rotated (middle), cross-section(right)}
-    \label{fig:enter-label}
+    \label{fig:surface_vis_75_150-100}
 \end{figure}
 
 
-\begin{figure}
+\begin{figure}[h!]
     \centering
     \includegraphics[width=0.3\linewidth]{Report/Images/6.3.2/150-255,25.png}
     \includegraphics[width=0.3\linewidth]{Report/Images/6.3.2/150-255,25-rotated.png}
     \includegraphics[width=0.3\linewidth]{Report/Images/6.3.2/150-255,25-sliced.png}
     \caption{Threshold: 150-255, mesh density:25, original (left), rotated (middle), cross-section(right)}
-    \label{fig:enter-label}
+    \label{fig:surface_vis_150_255-25}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h!]
     \centering
     \includegraphics[width=0.3\linewidth]{Report/Images/6.3.2/150-255,50.png}
     \includegraphics[width=0.3\linewidth]{Report/Images/6.3.2/150-255,50-rotated.png}
     \includegraphics[width=0.3\linewidth]{Report/Images/6.3.2/150-255,50-sliced.png}
     \caption{Threshold: 150-255, mesh density:50, original (left), rotated (middle), cross-section(right)}
-    \label{fig:enter-label}
+    \label{fig:surface_vis_150_255-50}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h!]
     \centering
     \includegraphics[width=0.3\linewidth]{Report/Images/6.3.2/150-255,75.png}
     \includegraphics[width=0.3\linewidth]{Report/Images/6.3.2/150-255,75-rotated.png}
     \includegraphics[width=0.3\linewidth]{Report/Images/6.3.2/150-255,75-sliced.png}
     \caption{Threshold: 150-255, mesh density:75, original (left), rotated (middle), cross-section(right)}
-    \label{fig:enter-label}
+    \label{fig:surface_vis_150_255-75}
 \end{figure}
 
 
-
-
-\begin{figure}
+\begin{figure}[h!]
     \centering
     \includegraphics[width=0.3\linewidth]{Report/Images/6.3.2/150-255,100.png}
     \includegraphics[width=0.3\linewidth]{Report/Images/6.3.2/150-255,100-rotated.png}
     \includegraphics[width=0.3\linewidth]{Report/Images/6.3.2/150-255,100-sliced.png}
     \caption{Threshold: 75-150, mesh density:100, original (left), rotated (middle), cross-section(right)}
-    \label{fig:enter-label}
+    \label{fig:surface_vis_150_255-100}
 \end{figure}
 
-
-
-
-
-
-
-
 \subsection*{Volume and Surface Visualization}
+For this part, figures \ref{fig:median_otsu} and figure \ref{fig:depth-cuing-results} were used for surface and volume visualization. 
+\begin{figure}[h!]
+\centering
+\subfloat{\label{fig:depth-cuing-volume_v1}\includegraphics[width=0.5\textwidth]{Images/Depth_Cuing_VolumeViz_t54_c-23_view1.png}}
+\subfloat{\label{fig:depth-cuing-volume_v1}\includegraphics[width=0.5\textwidth]{Images/Depth_Cuing_VolumeViz_t54_c-23_view2.png}}
+\caption{(a) Chromo.tiff with Otsu Threshold, and (b) Chromo.tiff with Median Filter and Otsu Threshold}
+\label{fig:thresholding}
+\end{figure}
+\begin{figure}[h!]
+\centering
+\subfloat{\label{fig:depth-cuing-surface_v1}\includegraphics[width=0.5\textwidth]{Images/DepthCuing_SurfaceVisualization_view1.png}}
+\subfloat{\label{fig:depth-cuing-surface_v1}\includegraphics[width=0.5\textwidth]{Images/DepthCuing_SurfaceVisualization_view2.png}}
+\caption{(a) Chromo.tiff with Otsu Threshold, and (b) Chromo.tiff with Median Filter and Otsu Threshold}
+\label{fig:thresholding}
+\end{figure}
 
+\begin{figure}[h!]
+\centering
+\subfloat{\label{fig:median-otsu-volume_v1}\includegraphics[width=0.5\textwidth]{Images/BinaryImage_VolumeVisualization_t43_c55_view1.png}}
+\subfloat{\label{fig:median-otsu-volume_v2}\includegraphics[width=0.5\textwidth]{Images/BinaryImage_VolumeVisualization_t43_c55_view2.png}}
+\caption{(a) Chromo.tiff with Otsu Threshold, and (b) Chromo.tiff with Median Filter and Otsu Threshold}
+\label{fig:thresholding}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\subfloat{\label{fig:median-otsu-surface_v1}\includegraphics[width=0.5\textwidth]{Images/sur.png}}
+\subfloat{\label{fig:median-otsu-surface_v2}\includegraphics[width=0.5\textwidth]{Images/BinaryImage_VolumeVisualization_t43_c55_view2.png}}
+\caption{(a) Chromo.tiff with Otsu Threshold, and (b) Chromo.tiff with Median Filter and Otsu Threshold}
+\label{fig:thresholding}
+\end{figure}
+
+\clearpage
 \section*{Question 4}
 \subsection*{Static 3D Visualization}
 \subsection*{Improving Signal Strength}
