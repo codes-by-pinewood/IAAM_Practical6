@@ -288,14 +288,45 @@ Figure \ref{fig:binary-image-volume-viz} shows the results of the binary image i
 \section*{Question 4}
 The acquired 3D images of zebrafish was first converted from  \textit{lif} to \textit{tiff} using the provided code snippet. It was loaded into Huygens and the microscopic parameters were set for all 4 images. 
 The parameters were modified based on the notes taken during the lab session. 
-
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\linewidth]{Report/Images/parameters_set.png}
+    \caption{Microscopic Parameters}
+    \label{fig:microscope-parameters}
+\end{figure}
 \subsection*{Static 3D Visualization}
-The 3D visualization of the images was done using Huygens SFP Volume Renderer. The 
+The 3D visualization of the images was done using Huygens SFP Volume Renderer. The parameters were minimally modified, so as to show the untouched image. 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\linewidth]{Report/Images/6.4-9/Image_0.png}
+    \caption{3D Visualization of Zebrafish}
+    \label{fig:zebrafish_0}
+\end{figure}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\linewidth]{Report/Images/6.4-9/image_1.png}
+    \caption{3D Visualization of Zebrafish}
+    \label{fig:zebrafish_1}
+\end{figure}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\linewidth]{Report/Images/6.4-9/image_2.png}
+    \caption{3D Visualization of Zebrafish}
+    \label{fig:zebrafish_2}
+\end{figure}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\linewidth]{Report/Images/6.4-9/image_3.png}
+    \caption{3D Visualization of Zebrafish tail}
+    \label{fig:zebrafish_tail}
+\end{figure}
 \subsection*{Improving Signal Strength}
 \subsection*{Automated Deconvolution}
+
+\subsubsection*{Image 1}
 \begin{table}[h!]
 \centering
-\caption{Comparison of percentages.}
+\caption{Comparison of SNRs - Image 1 (reference : fig. \ref{fig:zebrafish_0}}
 \begin{tabular}{*5c}
 \toprule
 Channel &  \multicolumn{2}{c}{Before Deconvolution} & \multicolumn{2}{c}{After Deconvolution}\\
@@ -304,6 +335,34 @@ Channel &  \multicolumn{2}{c}{Before Deconvolution} & \multicolumn{2}{c}{After D
 0   &  15 & Very good   & 15.96  & Good\\
 1   &  25 & Mediocre & 15.74  & Fair\\
 2   &  16  &  Mediocre & 19.98  & Mediocre\\
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{table}[h!]
+\centering
+\caption{Comparison of SNRs - Image 2 (reference : fig. \ref{fig:zebrafish_1}}
+\begin{tabular}{*5c}
+\toprule
+Channel &  \multicolumn{2}{c}{Before Deconvolution} & \multicolumn{2}{c}{After Deconvolution}\\
+\midrule
+{}   & SNR   & Reliability    & SNR   & Reliability \\
+0   &  16 & Very Good & 16 & Very Good \\
+1   &  16 & Very Good & 16 & Very Good \\
+2   &  16 & Very Good & 16 & Very Good \\
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{table}[h!]
+\centering
+\caption{Comparison of SNRs - Image 3 (reference : fig. \ref{fig:zebrafish_2}}
+\begin{tabular}{*5c}
+\toprule
+Channel &  \multicolumn{2}{c}{Before Deconvolution} & \multicolumn{2}{c}{After Deconvolution}\\
+\midrule
+{}   & SNR   & Reliability    & SNR   & Reliability \\
+0   &  16 & Very Good & 16 & Very Good \\
+1   &  16 & Very Good & 16 & Very Good \\
+2   &  16 & Very Good & 16 & Very Good \\
 \bottomrule
 \end{tabular}
 \end{table}
