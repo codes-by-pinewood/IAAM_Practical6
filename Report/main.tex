@@ -78,21 +78,21 @@ Figure \ref{fig:vaa3dthresh} shows the result of the Vaa3D software. As seen in 
 
 
 
-\subsection*{Algorithm for Depth Cuing}
-The figure \ref{fig:depth-cuing} shows the algorithm for depth cuing. As shown in the algorithm, 16 evenly spaced values are taken from the range 0 to 255 and the slices are thresholded with the values. Slices lower in the plane are thresholded with lower values and slices higher in the plane are thresholded iwth higher values. %with higher   
+\subsection*{Algorithm for Depth Cueing}
+The figure \ref{fig:depth-cuing} shows the algorithm for depth cueing. As shown in the algorithm, 16 evenly spaced values are taken from the range 0 to 255 and the slices are thresholded with the values. Slices lower in the plane are thresholded with lower values and slices higher in the plane are thresholded iwth higher values. %with higher   
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\linewidth]{Report/Images/depth_cuing.png}
-    \caption{Algorithm for depth cuing }
+    \caption{Algorithm for depth cueing }
     \label{fig:depth-cuing}
 \end{figure}
 
-\subsection*{Depth Cuing}
-Figure \ref{fig:depth-cuing-results} shows the result of depth cuing. 
+\subsection*{Depth Cueing}
+Figure \ref{fig:depth-cuing-results} shows the result of depth cueing. 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=1\linewidth]{Report/Images/mip.png}
-    \caption{Chromo.tiff with depth cuing}
+    \caption{Chromo.tiff with depth cueing}
     \label{fig:depth-cuing-results}
 \end{figure}
 
@@ -100,7 +100,7 @@ The first image is a raw image obtained before processing techniques such as thr
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=1\linewidth]{Report/Images/max.png}
+    \includegraphics[width=1\linewidth]{Report/Images/max_intensity.png}
     \caption{The stacked result of MIP}
     \label{fig:mip}
 \end{figure}
@@ -239,38 +239,40 @@ For the given image, the lower and upper ranges were varied between [0,75], [75,
 \end{figure}
 
 \subsection*{Volume and Surface Visualization}
-For this part, figures \ref{fig:median_otsu} and figure \ref{fig:depth-cuing-results} were used for surface and volume visualization. 
+For this part, figures \ref{fig:median_otsu} and figure \ref{fig:mip} were used for surface and volume visualization.\\
+Figure \ref{fig:depth-cue-volume-viz} shows the results of the volume visualization of the depth-cued image (\ref{fig:mip}). The threshold was set to 54, and the contrast was set to -23. This allowed to view the image properly, without any loss. Figure \ref{fig:depth-cue-surface-viz} shows the surface visualization for the same. \\
+Figure \ref{fig:binary-image-volume-viz} shows the results of the binary image i.e., figure (\ref{fig:median_otsu}). The threshold was set to 45, and the contrast was set to +55. Since this is a binary image, the contrast was much higher. Figure \ref{fig:binary-image-surface-viz} shows the surface visualization for the same. \\
 
-\
+
 \begin{figure}[h!]
 \centering
 \subfloat{\label{fig:depth-cuing-volume_v1}\includegraphics[width=0.5\textwidth]{Report/Images/6.3-7/Depth_Cuing_VolumeViz_t54_c-23_view1.png}}
 \subfloat{\label{fig:depth-cuing-volume_v1}\includegraphics[width=0.5\textwidth]{Report/Images/6.3-7/Depth_Cuing_VolumeViz_t54_c-23_view2.png}}
-\caption{Figure 
-\label{fig:thresholding}
+\caption{Volume Visualization of the Depth-cued Image}
+\label{fig:depth-cue-volume-viz}
 \end{figure}
 \begin{figure}[h!]
 \centering
 \subfloat{\label{fig:depth-cuing-surface_v1}\includegraphics[width=0.5\textwidth]{Report/Images/6.3-7/DepthCuing_SurfaceVisualization_view1.png}}
 \subfloat{\label{fig:depth-cuing-surface_v1}\includegraphics[width=0.5\textwidth]{Report/Images/6.3-7/DepthCuing_SurfaceVisualization_view2.png}}
-\caption{(a) Chromo.tiff with Otsu Threshold, and (b) Chromo.tiff with Median Filter and Otsu Threshold}
-\label{fig:thresholding}
+\caption{Surface Visualization of the Depth-cued Image}
+\label{fig:depth-cue-surface-viz}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
 \subfloat{\label{fig:median-otsu-volume_v1}\includegraphics[width=0.5\textwidth]{Report/Images/6.3-7/BinaryImage_VolumeVisualization_t43_c55_view1.png}}
 \subfloat{\label{fig:median-otsu-volume_v2}\includegraphics[width=0.5\textwidth]{Report/Images/6.3-7/BinaryImage_VolumeVisualization_t43_c55_view2.png}}
-\caption{(a) Chromo.tiff with Otsu Threshold, and (b) Chromo.tiff with Median Filter and Otsu Threshold}
-\label{fig:thresholding}
+\caption{Volume Visualization of the Binary Image}
+\label{fig:binary-image-volume-viz}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
 \subfloat{\label{fig:median-otsu-surface_v1}\includegraphics[width=0.5\textwidth]{Report/Images/6.3-7/BinaryImage_SurfaceVisualization_view1.png}}
 \subfloat{\label{fig:median-otsu-surface_v2}\includegraphics[width=0.5\textwidth]{Report/Images/6.3-7/BinaryImage_SurfaceVisualization_view2.png}}
-\caption{(a) Chromo.tiff with Otsu Threshold, and (b) Chromo.tiff with Median Filter and Otsu Threshold}
-\label{fig:thresholding}
+\caption{Surface Visualization of the Binary Image}
+\label{fig:binary-image-surface-viz}
 \end{figure}
 
 \clearpage
