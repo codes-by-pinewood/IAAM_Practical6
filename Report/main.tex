@@ -18,6 +18,10 @@
 
 \usepackage{graphicx}
 \usepackage{caption}
+\usepackage{array}
+\usepackage{booktabs}
+\setlength{\heavyrulewidth}{1.5pt}
+\setlength{\abovetopsep}{4pt}
 
 
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
@@ -282,9 +286,27 @@ Figure \ref{fig:binary-image-volume-viz} shows the results of the binary image i
 
 \clearpage
 \section*{Question 4}
+The acquired 3D images of zebrafish was first converted from  \textit{lif} to \textit{tiff} using the provided code snippet. It was loaded into Huygens and the microscopic parameters were set for all 4 images. 
+The parameters were modified based on the notes taken during the lab session. 
+
 \subsection*{Static 3D Visualization}
+The 3D visualization of the images was done using Huygens SFP Volume Renderer. The 
 \subsection*{Improving Signal Strength}
 \subsection*{Automated Deconvolution}
+\begin{table}[h!]
+\centering
+\caption{Comparison of percentages.}
+\begin{tabular}{*5c}
+\toprule
+Channel &  \multicolumn{2}{c}{Before Deconvolution} & \multicolumn{2}{c}{After Deconvolution}\\
+\midrule
+{}   & SNR   & Reliability    & SNR   & Reliability \\
+0   &  15 & Very good   & 15.96  & Good\\
+1   &  25 & Mediocre & 15.74  & Fair\\
+2   &  16  &  Mediocre & 19.98  & Mediocre\\
+\bottomrule
+\end{tabular}
+\end{table}
 \subsection*{Manual Deconvolution}
 \subsection*{Visualizations}
 \clearpage
