@@ -100,7 +100,7 @@ The first image is a raw image obtained before processing techniques such as thr
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=1\linewidth]{Report/Images/max_intensity.png}
+    \includegraphics[width=0.5\linewidth]{Report/Images/max_intensity.png}
     \caption{The stacked result of MIP}
     \label{fig:mip}
 \end{figure}
@@ -237,40 +237,45 @@ For the given image, the lower and upper ranges were varied between [0,75], [75,
     \caption{Threshold: 75-150, mesh density:100, original (left), rotated (middle), cross-section(right)}
     \label{fig:surface_vis_150_255-100}
 \end{figure}
+\clearpage
 
 \subsection*{Volume and Surface Visualization}
-For this part, figures \ref{fig:median_otsu} and figure \ref{fig:mip} were used for surface and volume visualization.\\
+For this part, figures \ref{fig:median_otsu} and \ref{fig:mip} were used for surface and volume visualization.\\
 Figure \ref{fig:depth-cue-volume-viz} shows the results of the volume visualization of the depth-cued image (\ref{fig:mip}). The threshold was set to 54, and the contrast was set to -23. This allowed to view the image properly, without any loss. Figure \ref{fig:depth-cue-surface-viz} shows the surface visualization for the same. \\
 Figure \ref{fig:binary-image-volume-viz} shows the results of the binary image i.e., figure (\ref{fig:median_otsu}). The threshold was set to 45, and the contrast was set to +55. Since this is a binary image, the contrast was much higher. Figure \ref{fig:binary-image-surface-viz} shows the surface visualization for the same. \\
 
 
 \begin{figure}[h!]
 \centering
-\subfloat{\label{fig:depth-cuing-volume_v1}\includegraphics[width=0.5\textwidth]{Report/Images/6.3-7/Depth_Cuing_VolumeViz_t54_c-23_view1.png}}
-\subfloat{\label{fig:depth-cuing-volume_v1}\includegraphics[width=0.5\textwidth]{Report/Images/6.3-7/Depth_Cuing_VolumeViz_t54_c-23_view2.png}}
+\subfloat{\label{fig:depth-cuing-volume_v1}\includegraphics[width=0.45\textwidth]{Report/Images/6.3-7/Depth_Cuing_VolumeViz_t54_c-23_view1.png}}
+\vspace{5 mm}
+\subfloat{\label{fig:depth-cuing-volume_v2}\includegraphics[width=0.45\textwidth]{Report/Images/6.3-7/Depth_Cuing_VolumeViz_t54_c-23_view2.png}}
 \caption{Volume Visualization of the Depth-cued Image}
 \label{fig:depth-cue-volume-viz}
 \end{figure}
 \begin{figure}[h!]
 \centering
-\subfloat{\label{fig:depth-cuing-surface_v1}\includegraphics[width=0.5\textwidth]{Report/Images/6.3-7/DepthCuing_SurfaceVisualization_view1.png}}
-\subfloat{\label{fig:depth-cuing-surface_v1}\includegraphics[width=0.5\textwidth]{Report/Images/6.3-7/DepthCuing_SurfaceVisualization_view2.png}}
+\subfloat{\label{fig:depth-cuing-surface_v1}\includegraphics[width=0.45\textwidth]{Report/Images/6.3-7/DepthCuing_SurfaceVisualization_view1.png}}
+\vspace{5 mm}
+\subfloat{\label{fig:depth-cuing-surface_v2}\includegraphics[width=0.45\textwidth]{Report/Images/6.3-7/DepthCuing_SurfaceVisualization_view2.png}}
 \caption{Surface Visualization of the Depth-cued Image}
 \label{fig:depth-cue-surface-viz}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
-\subfloat{\label{fig:median-otsu-volume_v1}\includegraphics[width=0.5\textwidth]{Report/Images/6.3-7/BinaryImage_VolumeVisualization_t43_c55_view1.png}}
-\subfloat{\label{fig:median-otsu-volume_v2}\includegraphics[width=0.5\textwidth]{Report/Images/6.3-7/BinaryImage_VolumeVisualization_t43_c55_view2.png}}
+\subfloat{\label{fig:median-otsu-volume_v1}\includegraphics[width=0.45\textwidth]{Report/Images/6.3-7/BinaryImage_VolumeVisualization_t43_c55_view1.png}}
+\vspace{5 mm}
+\subfloat{\label{fig:median-otsu-volume_v2}\includegraphics[width=0.45\textwidth]{Report/Images/6.3-7/BinaryImage_VolumeVisualization_t43_c55_view2.png}}
 \caption{Volume Visualization of the Binary Image}
 \label{fig:binary-image-volume-viz}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
-\subfloat{\label{fig:median-otsu-surface_v1}\includegraphics[width=0.5\textwidth]{Report/Images/6.3-7/BinaryImage_SurfaceVisualization_view1.png}}
-\subfloat{\label{fig:median-otsu-surface_v2}\includegraphics[width=0.5\textwidth]{Report/Images/6.3-7/BinaryImage_SurfaceVisualization_view2.png}}
+\subfloat{\label{fig:median-otsu-surface_v1}\includegraphics[width=0.45\textwidth]{Report/Images/6.3-7/BinaryImage_SurfaceVisualization_view1.png}}
+\vspace{5 mm}
+\subfloat{\label{fig:median-otsu-surface_v2}\includegraphics[width=0.45\textwidth]{Report/Images/6.3-7/BinaryImage_SurfaceVisualization_view2.png}}
 \caption{Surface Visualization of the Binary Image}
 \label{fig:binary-image-surface-viz}
 \end{figure}
