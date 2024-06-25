@@ -83,7 +83,7 @@ Figure \ref{fig:vaa3dthresh} shows the result of the Vaa3D software. As seen in 
 
 
 \subsection*{Algorithm for Depth Cueing}
-The figure \ref{fig:depth-cuing} shows the algorithm for depth cueing. As shown in the algorithm, 16 evenly spaced values are taken from the range 0 to 255 and the slices are thresholded with the values. Slices lower in the plane are thresholded with lower values and slices higher in the plane are thresholded iwth higher values. %with higher   
+The figure \ref{fig:depth-cuing} shows the algorithm for depth cueing. As shown in the algorithm, 16 evenly spaced values are taken from the range 0 to 255 and the slices are thresholded with the values. Slices lower in the plane are thresholded with lower values and slices higher in the plane are thresholded iwth higher values. The slices are combined to create a 3-dimensional layered image. 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\linewidth]{Report/Images/depth_cuing.png}
@@ -321,12 +321,22 @@ The 3D visualization of the images was done using Huygens SFP Volume Renderer. T
     \label{fig:zebrafish_tail}
 \end{figure}
 \subsection*{Improving Signal Strength}
+For improving the signal strength, the channels of the image are separated, and 
+\clearpage
 \subsection*{Automated Deconvolution}
-
 \subsubsection*{Image 1}
+Image 1 was automatically deconvolved and the resultant image showed a significant improvement in SNR. Furthermore the reliability of the channels improved from fair-mediocre to very good.
+\begin{figure}[h!]
+\centering
+\subfloat{\label{fig:Before Deconvolution 1}\includegraphics[width=0.45\textwidth]{Report/Images/original/Image_for_Huygens_0_rendering.jpg}}
+\vspace{5 mm}
+\subfloat{\label{fig:After Deconvolution 1}\includegraphics[width=0.45\textwidth]{Report/Images/deconvolved/Image_for_Huygens_0_decon_rendering.jpg}}
+\caption{Automatic deconvolution of Image 1}
+\label{fig:auto-deconvolve-image1}
+\end{figure}
 \begin{table}[h!]
 \centering
-\caption{Comparison of SNRs - Image 1 (reference : fig. \ref{fig:zebrafish_0}}
+\caption{Comparison of SNRs - Image 1 (reference : fig. \ref{fig:zebrafish_0})}
 \begin{tabular}{*5c}
 \toprule
 Channel &  \multicolumn{2}{c}{Before Deconvolution} & \multicolumn{2}{c}{After Deconvolution}\\
@@ -338,9 +348,19 @@ Channel &  \multicolumn{2}{c}{Before Deconvolution} & \multicolumn{2}{c}{After D
 \bottomrule
 \end{tabular}
 \end{table}
+\subsubsection*{Image 2}
+Similarly, image 2 was automatically deconvolved and the SNRs were noted. Though the image did not show any improvements in the SNR, further examination revealed that the intensities dropped slightly. 
+\begin{figure}[h!]
+\centering
+\subfloat{\label{fig:Before Deconvolution 2}\includegraphics[width=0.45\textwidth]{Report/Images/original/Image_for_Huygens_1_rendering.jpg}}
+\vspace{5 mm}
+\subfloat{\label{fig:After Deconvolution 2}\includegraphics[width=0.45\textwidth]{Report/Images/deconvolved/Image_for_Huygens_1_decon_rendering.jpg}}
+\caption{Automatic deconvolution of Image 2}
+\label{fig:auto-deconvolve-image2}
+\end{figure}
 \begin{table}[h!]
 \centering
-\caption{Comparison of SNRs - Image 2 (reference : fig. \ref{fig:zebrafish_1}}
+\caption{Comparison of SNRs - Image 2 (reference : fig. \ref{fig:zebrafish_1})}
 \begin{tabular}{*5c}
 \toprule
 Channel &  \multicolumn{2}{c}{Before Deconvolution} & \multicolumn{2}{c}{After Deconvolution}\\
@@ -352,9 +372,43 @@ Channel &  \multicolumn{2}{c}{Before Deconvolution} & \multicolumn{2}{c}{After D
 \bottomrule
 \end{tabular}
 \end{table}
+\subsubsection*{Image 3}
+Image 3 was automatically deconvolved and the SNRs were noted. Though the image did not show any improvements in the SNR (as the previous one), further examination revealed that the intensities dropped slightly. 
+\begin{figure}[h!]
+\centering
+\subfloat{\label{fig:Before Deconvolution 3}\includegraphics[width=0.45\textwidth]{Report/Images/original/Image_for_Huygens_2_rendering.jpg}}
+\vspace{5 mm}
+\subfloat{\label{fig:After Deconvolution 3}\includegraphics[width=0.45\textwidth]{Report/Images/deconvolved/Image_for_Huygens_2_decon_rendering.jpg}}
+\caption{Automatic deconvolution of Image 3}
+\label{fig:auto-deconvolve-image3}
+\end{figure}
 \begin{table}[h!]
 \centering
-\caption{Comparison of SNRs - Image 3 (reference : fig. \ref{fig:zebrafish_2}}
+\caption{Comparison of SNRs - Image 3 (reference : fig. \ref{fig:zebrafish_2})}
+\begin{tabular}{*5c}
+\toprule
+Channel &  \multicolumn{2}{c}{Before Deconvolution} & \multicolumn{2}{c}{After Deconvolution}\\
+\midrule
+{}   & SNR   & Reliability    & SNR   & Reliability \\
+0   &  16 & Very Good & 16 & Very Good \\
+1   &  16 & Very Good & 16 & Very Good \\
+2   &  16 & Very Good & 16 & Very Good \\
+\bottomrule
+\end{tabular}
+\end{table}
+\subsubsection*{Image 4}
+Image 4 (the zebrafish tail) was automatically deconvolved and the SNRs were noted. Though the image did not show any improvements in the SNR (as the previous ones), further examination revealed that the intensities dropped slightly. 
+\begin{figure}[h!]
+\centering
+\subfloat{\label{fig:Before Deconvolution 4}\includegraphics[width=0.45\textwidth]{Report/Images/original/Image_for_Huygens_3_rendering.jpg}}
+\vspace{5 mm}
+\subfloat{\label{fig:After Deconvolution 4}\includegraphics[width=0.45\textwidth]{Report/Images/deconvolved/Image_for_Huygens_3_decon_rendering.jpg}}
+\caption{Automatic deconvolution of Image 4}
+\label{fig:auto-deconvolve-image4}
+\end{figure}
+\begin{table}[h!]
+\centering
+\caption{Comparison of SNRs - Image 4 (reference : fig. \ref{fig:zebrafish_tail})}
 \begin{tabular}{*5c}
 \toprule
 Channel &  \multicolumn{2}{c}{Before Deconvolution} & \multicolumn{2}{c}{After Deconvolution}\\
