@@ -321,7 +321,7 @@ Figures \ref{fig:zebrafish_0} , \ref{fig:zebrafish_1} were generated in 10x, and
     \label{fig:zebrafish_tail}
 \end{figure}
 \clearpage
-\subsection*{Improving Signal Strength}
+\subsection*{Improving Signal Strength} \label{Signal_Strength}
 For improving the signal strength, the channels of the image are separated, and the parameters are altered for every channel. \\
 This is done by using SPF Volume Renderer in Huygens. 
 \begin{table}[h!]
@@ -576,7 +576,7 @@ As there is no significant data loss, the histograms seems to be similar, with a
 \caption{Histograms of Image 2 - Before and After Manual Deconvolution}
 \label{fig:manual-deconvolve-image2-histogram}
 \end{figure}\newline
-\subsubsection*{Image 3} \newline
+\subsubsection*{Image 3} 
 Similar to Image 1, Classic MLE algorithm was used, with a conservative strategy for deconvolution. 
 Channels 0 and 1 use a conservation strategy with Classic MLE, automatic estimation of background was used, with in/near object background value set to 0.05. A classic strategy of iteration with 72 iterations was used, with the brick layout set to slice-by-slice layout. The sharpness and quality threshold remained unchanged \newline
 \begin{figure}[h!]
@@ -621,7 +621,14 @@ Channel 2: 14014 clipped voxels detected, indicating severe data loss or over-pr
 The different settings impact the image quality and data preservation. Aggressive strategies and higher iterations often lead to more clipped voxels, indicating potential over-processing and loss of detail. Conservation strategies with fewer iterations tend to preserve more data but may result in less aggressive noise reduction and sharpening. In the end it is a trade-off between more conservation of data (less clipped voxels) and higher quality (sharpening and noise reduction). The choice of deconvolution algorithm (Classic MLE vs. Goode MLE) also influences the outcome, with Goode MLE typically requiring fewer iterations for similar results.
 
 \subsection*{Visualizations}
-\clearpage
+The SFP visualizations of all 4 images were generated using Huygens Movie Maker. 
+\\The parameters were changed as detailed in Question 4.1. 
+\medskip\\
+\textbf{SFP of Image 1} : File Name - \textit{A603\_Image3\_SFP.mp4}\\
+\textbf{SFP of Image 2} : File Name - \textit{A603\_Image4\_SFP.mp4}\\
+\textbf{SFP of Image 3} : File Name - \textit{A603\_Image1\_SFP.mp4}\\
+\textbf{SFP of Image 4} : File Name - \textit{A603\_Image2\_SFP.mp4}\\
+
 \section*{Appendix}
 \subsection*{Function to display image content in planes}
 \begin{figure}[h!]
