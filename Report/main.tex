@@ -440,7 +440,7 @@ Image 1 was automatically deconvolved and the resultant image showed a significa
 \centering
 \subfloat{\label{fig:Before Deconvolution 1}\includegraphics[width=0.45\textwidth]{Report/Images/original/Image_for_Huygens_0_rendering.jpg}}
 \vspace{5 mm}
-\subfloat{\label{fig:After Deconvolution 1}\includegraphics[width=0.45\textwidth]{Report/Images/deconvolved/Image_for_Huygens_0_decon_rendering.jpg}}
+\subfloat{\label{fig:After Deconvolution 1}\includegraphics[width=0.45\textwidth]{Report/Images/auto-deconvolved/Image_for_Huygens_0_decon_rendering.jpg}}
 \caption{Automatic deconvolution of Image 1}
 \label{fig:auto-deconvolve-image1}
 \end{figure}
@@ -464,7 +464,7 @@ Similarly, image 2 was automatically deconvolved and the SNRs were noted. Though
 \centering
 \subfloat{\label{fig:Before Deconvolution 2}\includegraphics[width=0.45\textwidth]{Report/Images/original/Image_for_Huygens_1_rendering.jpg}}
 \vspace{5 mm}
-\subfloat{\label{fig:After Deconvolution 2}\includegraphics[width=0.45\textwidth]{Report/Images/deconvolved/Image_for_Huygens_1_decon_rendering.jpg}}
+\subfloat{\label{fig:After Deconvolution 2}\includegraphics[width=0.45\textwidth]{Report/Images/auto-deconvolved/Image_for_Huygens_1_decon_rendering.jpg}}
 \caption{Automatic deconvolution of Image 2}
 \label{fig:auto-deconvolve-image2}
 \end{figure}
@@ -488,7 +488,7 @@ Image 3 was automatically deconvolved and the SNRs were noted. Though the image 
 \centering
 \subfloat{\label{fig:Before Deconvolution 3}\includegraphics[width=0.45\textwidth]{Report/Images/original/Image_for_Huygens_2_rendering.jpg}}
 \vspace{5 mm}
-\subfloat{\label{fig:After Deconvolution 3}\includegraphics[width=0.45\textwidth]{Report/Images/deconvolved/Image_for_Huygens_2_decon_rendering.jpg}}
+\subfloat{\label{fig:After Deconvolution 3}\includegraphics[width=0.45\textwidth]{Report/Images/auto-deconvolved/Image_for_Huygens_2_decon_rendering.jpg}}
 \caption{Automatic deconvolution of Image 3}
 \label{fig:auto-deconvolve-image3}
 \end{figure}
@@ -512,7 +512,7 @@ Image 4 (the zebrafish tail) was automatically deconvolved and the SNRs were not
 \centering
 \subfloat{\label{fig:Before Deconvolution 4}\includegraphics[width=0.45\textwidth]{Report/Images/original/Image_for_Huygens_3_rendering.jpg}}
 \vspace{5 mm}
-\subfloat{\label{fig:After Deconvolution 4}\includegraphics[width=0.45\textwidth]{Report/Images/deconvolved/Image_for_Huygens_3_decon_rendering.jpg}}
+\subfloat{\label{fig:After Deconvolution 4}\includegraphics[width=0.45\textwidth]{Report/Images/auto-deconvolved/Image_for_Huygens_3_decon_rendering.jpg}}
 \caption{Automatic deconvolution of Image 4}
 \label{fig:auto-deconvolve-image4}
 \end{figure}
@@ -531,24 +531,32 @@ Channel &  \multicolumn{2}{c}{Before Deconvolution} & \multicolumn{2}{c}{After D
 \end{tabular}
 \end{table}
 \subsection*{Manual Deconvolution}
-
-Image 0:
-Channels 0, 1, and 2 use an aggressive strategy with Classic MLE, automatic estimation with lowest background value, 50 iterations, and 90 sharpness.
-Channel 1: 3175 clipped voxels detected, indicating significant data loss or over-processing.
-Channel 2: 149 clipped voxels detected, indicating moderate data loss or over-processing.
-Image 1:
-Channels 0, 1, and 2 use an aggressive strategy with Goode MLE, automatic estimation with lowest background value, 20 iterations, 90 sharpness, 0.3 quality threshold, and 1 brick layout.
-Channel 0: 22 clipped voxels detected, less data loss than Image 0.
+In the following section we applied manual deconvolution to all 4 images of the Zebrafish. Manual deconvolution has more parameters that need to be manually fine-tuned such as the deconvolution strategy, the background threshold, the number of iterations, and the deconvolution layout. 
+\subsubsection*{Image 1}
+An aggressive strategy for deconvolution was used here with Classic MLE algorithm. An automatic estimation of the background with lowest background value as 0.1, as there is not a lot of background space. This was done over 50 iterations and the acuity of the image was increased to +90, to prevent dataloss. \newline
+\begin{figure}[h!]
+\centering
+\subfloat{\label{fig:Before Manual Deconvolution 1}\includegraphics[width=0.45\textwidth]{Report/Images/original/Image_for_Huygens_0_rendering.jpg}}
+\vspace{5 mm}
+\subfloat{\label{fig:After Deconvolution 4}\includegraphics[width=0.45\textwidth]{Report/Images/manu-deconvolved/Image_for_Huygens_3_decon_rendering.jpg}}
+\caption{Automatic deconvolution of Image 4}
+\label{fig:auto-deconvolve-image4}
+\end{figure}
+Channel 1: 3175 clipped voxels detected, indicating significant data loss or over-processing. \newline
+Channel 2: 149 clipped voxels detected, indicating moderate data loss or over-processing. \newline
+\subsubsection*{Image 2}
+Channels 0, 1, and 2 use an aggressive strategy with Good's MLE, automatic estimation with lowest background value as 0.1, 20 iterations, 90 sharpness, 0.3 quality threshold, and 1 brick layout. \newline
+Channel 0: 22 clipped voxels detected, less data loss than Image 0.\newline
 Goode MLE requires fewer iterations than Classic MLE, which explains the reduced iteration count.
-Image 2:
-Channels 0 and 1 use a conservation strategy with Classic MLE, automatic estimation with in/near object background value, 20 iterations, 90 sharpness, 0.3 quality threshold, and slice-by-slice layout.
-Channel 0: 141 clipped voxels detected.
-Channel 2 uses an aggressive strategy with Goode MLE and similar settings to Image 1.
-Image 3:
-Channels 0, 1, and 2 use an aggressive strategy with Classic MLE, automatic estimation with the lowest object background value, 72 iterations, 90 sharpness, 0.5 quality threshold, and many bricks layout.
-Channel 2: 14014 clipped voxels detected, indicating severe data loss or over-processing, possibly due to the high number of iterations and aggressive strategy.
-Summary:
-The different settings impact the image quality and data preservation. Aggressive strategies and higher iterations often lead to more clipped voxels, indicating potential over-processing and loss of detail. Conservation strategies with fewer iterations tend to preserve more data but may result in less aggressive noise reduction and sharpening. The choice of deconvolution algorithm (Classic MLE vs. Goode MLE) also influences the outcome, with Goode MLE typically requiring fewer iterations for similar results.
+\subsubsection*{Image 3} \newline
+Channels 0 and 1 use a conservation strategy with Classic MLE, automatic estimation with in/near object background value as 0.05, 20 iterations, 90 sharpness, 0.3 quality threshold, and slice-by-slice layout. \newline
+Channel 0: 141 clipped voxels detected. \newline
+Channel 2 uses an aggressive strategy with Good's MLE and similar settings to Image 1.\newline
+\subsubsection*{Image 4}
+Channels 0, 1, and 2 use an aggressive strategy with Classic MLE, automatic estimation with the lowest object background value as 0.7, 72 iterations, 90 sharpness, 0.5 quality threshold, and many bricks layout. \newline
+Channel 2: 14014 clipped voxels detected, indicating severe data loss or over-processing, possibly due to the high number of iterations and aggressive strategy. \newline
+\newline
+The different settings impact the image quality and data preservation. Aggressive strategies and higher iterations often lead to more clipped voxels, indicating potential over-processing and loss of detail. Conservation strategies with fewer iterations tend to preserve more data but may result in less aggressive noise reduction and sharpening. In the end it is a trade-off between more conservation of data (less clipped voxels) and higher quality (sharpening and noise reduction). The choice of deconvolution algorithm (Classic MLE vs. Goode MLE) also influences the outcome, with Goode MLE typically requiring fewer iterations for similar results.
 
 
 
