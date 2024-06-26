@@ -15,11 +15,10 @@
 \usepackage{subfig}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
-
-\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
 \usepackage{caption}
 \usepackage{array}
-\usepackage{booktabs}
 \setlength{\heavyrulewidth}{1.5pt}
 \setlength{\abovetopsep}{4pt}
 
@@ -290,12 +289,13 @@ The acquired 3D images of zebrafish was first converted from  \textit{lif} to \t
 The parameters were modified based on the notes taken during the lab session. 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.75\linewidth]{Report/Images/parameters_set.png}
+    \includegraphics[width=0.85\linewidth]{Report/Images/parameters_set.png}
     \caption{Microscopic Parameters}
     \label{fig:microscope-parameters}
 \end{figure}
 \subsection*{Static 3D Visualization}
-The 3D visualization of the images was done using Huygens SFP Volume Renderer. The parameters were minimally modified, so as to show the untouched image. 
+The 3D visualization of the images was done using Huygens SFP Volume Renderer. The parameters were minimally modified, so as to show the untouched image. \\
+Figures \ref{fig:zebrafish_0} , \ref{fig:zebrafish_1} were generated in 10x, and figure \ref{fig:zebrafish_2} was taken in 100x. Figure \ref{fig:zebrafish_tail} is an image of the tail of the zebrafish. 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.75\linewidth]{Report/Images/6.4-9/Image_0.png}
@@ -320,8 +320,118 @@ The 3D visualization of the images was done using Huygens SFP Volume Renderer. T
     \caption{3D Visualization of Zebrafish tail}
     \label{fig:zebrafish_tail}
 \end{figure}
+\clearpage
 \subsection*{Improving Signal Strength}
-For improving the signal strength, the channels of the image are separated, and 
+For improving the signal strength, the channels of the image are separated, and the parameters are altered for every channel. \\
+This is done by using SPF Volume Renderer in Huygens. 
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|p{0.3\linewidth} | p{0.3\linewidth}|}
+    \hline
+       Surface Threshold & 30 \\   \hline
+       Surface Seed & 100 \\  \hline
+       Brightness & 50 \\  \hline
+       Saturation & 100 \\ \hline
+    \end{tabular}
+    \label{tab:signal}
+\end{table}
+\subsubsection*{Image 1}
+Apart from the parameters mentioned above, the values of the signal garbage volume was changed to 825508. 
+\begin{figure}[h!]
+\centering
+\subfloat{\label{fig:Before Tuning 1}\includegraphics[width=0.45\textwidth]{Report/Images/original/Image_for_Huygens_0_rendering.jpg}}
+\vspace{5 mm}
+\subfloat{\label{fig:After Tuning 1}\includegraphics[width=0.45\textwidth]{Report/Images/cleaned-up/Image_for_Huygens_0_rendering.jpg}}
+\caption{Processing Separate Channels of Image 1}
+\label{fig:tuning-image1}
+\end{figure}
+\begin{table}[h!]
+\centering
+\caption{Comparison of SNRs - Image 1 (reference : fig. \ref{fig:zebrafish_0})}
+\begin{tabular}{*5c}
+\toprule
+Channel &  \multicolumn{2}{c}{Before Deconvolution} & \multicolumn{2}{c}{After Deconvolution}\\
+\midrule
+{}   & SNR   & Reliability    & SNR   & Reliability \\
+0   &  15 & Very good   & 16  & Very Good\\
+1   &  25 & Mediocre & 16  & Very Good\\
+2   &  16  &  Mediocre & 16  & Very Good\\
+\bottomrule
+\end{tabular}
+\end{table}
+\subsubsection*{Image 2}
+Apart from the parameters mentioned above, the values of the signal garbage volume was changed to 100493. 
+\begin{figure}[h!]
+\centering
+\subfloat{\label{fig:Before Tuning 2}\includegraphics[width=0.45\textwidth]{Report/Images/original/Image_for_Huygens_1_rendering.jpg}}
+\vspace{5 mm}
+\subfloat{\label{fig:After Tuning 2}\includegraphics[width=0.45\textwidth]{Report/Images/cleaned-up/Image_for_Huygens_1_rendering.jpg}}
+\caption{Processing Separate Chanels of Image 2}
+\label{fig:tuning-image2}
+\end{figure}
+\begin{table}[h!]
+\centering
+\caption{Comparison of SNRs - Image 2 (reference : fig. \ref{fig:zebrafish_1})}
+\begin{tabular}{*5c}
+\toprule
+Channel &  \multicolumn{2}{c}{Before Deconvolution} & \multicolumn{2}{c}{After Deconvolution}\\
+\midrule
+{}   & SNR   & Reliability    & SNR   & Reliability \\
+0   &  16 & Very Good & 16 & Very Good \\
+1   &  16 & Very Good & 16 & Very Good \\
+2   &  16 & Very Good & 15 & Very Good \\
+\bottomrule
+\end{tabular}
+\end{table}
+\subsubsection*{Image 3}
+Apart from the parameters mentioned above, the values of the signal garbage volume was changed to 770303. 
+\begin{figure}[h!]
+\centering
+\subfloat{\label{fig:Before Tuning 3}\includegraphics[width=0.45\textwidth]{Report/Images/original/Image_for_Huygens_2_rendering.jpg}}
+\vspace{5 mm}
+\subfloat{\label{fig:After Tuning 3}\includegraphics[width=0.45\textwidth]{Report/Images/cleaned-up/Image_for_Huygens_2_rendering.jpg}}
+\caption{Processing Separate Channels of Image 3}
+\label{fig:tuning-image3}
+\end{figure}
+\begin{table}[h!]
+\centering
+\caption{Comparison of SNRs - Image 3 (reference : fig. \ref{fig:zebrafish_2})}
+\begin{tabular}{*5c}
+\toprule
+Channel &  \multicolumn{2}{c}{Before Deconvolution} & \multicolumn{2}{c}{After Deconvolution}\\
+\midrule
+{}   & SNR   & Reliability    & SNR   & Reliability \\
+0   &  16 & Very Good & 16 & Very Good \\
+1   &  16 & Very Good & 16 & Very Good \\
+2   &  16 & Very Good & 16 & Very Good \\
+\bottomrule
+\end{tabular}
+\end{table}
+\subsubsection*{Image 4}
+Apart from the parameters mentioned above, the values of the signal garbage volume was changed to 11600.
+\begin{figure}[h!]
+\centering
+\subfloat{\label{fig:Before Tuning 4}\includegraphics[width=0.45\textwidth]{Report/Images/original/Image_for_Huygens_3_rendering.jpg}}
+\vspace{5 mm}
+\subfloat{\label{fig:After Tuning 4}\includegraphics[width=0.45\textwidth]{Report/Images/cleaned-up/Image_for_Huygens_3_rendering.jpg}}
+\caption{Processing Separate Channels of Image 4}
+\label{fig:tuning-image4}
+\end{figure}
+\begin{table}[h!]
+\centering
+\caption{Comparison of SNRs - Image 4 (reference : fig. \ref{fig:zebrafish_tail})}
+\begin{tabular}{*5c}
+\toprule
+Channel &  \multicolumn{2}{c}{Before Deconvolution} & \multicolumn{2}{c}{After Deconvolution}\\
+\midrule
+{}   & SNR   & Reliability    & SNR   & Reliability \\
+0   &  16 & Very Good & 11 & Very Good \\
+1   &  16 & Very Good & 16 & Very Good \\
+2   &  16 & Very Good & 15 & Very Good \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \clearpage
 \subsection*{Automated Deconvolution}
 \subsubsection*{Image 1}
@@ -421,6 +531,27 @@ Channel &  \multicolumn{2}{c}{Before Deconvolution} & \multicolumn{2}{c}{After D
 \end{tabular}
 \end{table}
 \subsection*{Manual Deconvolution}
+
+Image 0:
+Channels 0, 1, and 2 use an aggressive strategy with Classic MLE, automatic estimation with lowest background value, 50 iterations, and 90 sharpness.
+Channel 1: 3175 clipped voxels detected, indicating significant data loss or over-processing.
+Channel 2: 149 clipped voxels detected, indicating moderate data loss or over-processing.
+Image 1:
+Channels 0, 1, and 2 use an aggressive strategy with Goode MLE, automatic estimation with lowest background value, 20 iterations, 90 sharpness, 0.3 quality threshold, and 1 brick layout.
+Channel 0: 22 clipped voxels detected, less data loss than Image 0.
+Goode MLE requires fewer iterations than Classic MLE, which explains the reduced iteration count.
+Image 2:
+Channels 0 and 1 use a conservation strategy with Classic MLE, automatic estimation with in/near object background value, 20 iterations, 90 sharpness, 0.3 quality threshold, and slice-by-slice layout.
+Channel 0: 141 clipped voxels detected.
+Channel 2 uses an aggressive strategy with Goode MLE and similar settings to Image 1.
+Image 3:
+Channels 0, 1, and 2 use an aggressive strategy with Classic MLE, automatic estimation with the lowest object background value, 72 iterations, 90 sharpness, 0.5 quality threshold, and many bricks layout.
+Channel 2: 14014 clipped voxels detected, indicating severe data loss or over-processing, possibly due to the high number of iterations and aggressive strategy.
+Summary:
+The different settings impact the image quality and data preservation. Aggressive strategies and higher iterations often lead to more clipped voxels, indicating potential over-processing and loss of detail. Conservation strategies with fewer iterations tend to preserve more data but may result in less aggressive noise reduction and sharpening. The choice of deconvolution algorithm (Classic MLE vs. Goode MLE) also influences the outcome, with Goode MLE typically requiring fewer iterations for similar results.
+
+
+
 \subsection*{Visualizations}
 \clearpage
 \section*{Appendix}
