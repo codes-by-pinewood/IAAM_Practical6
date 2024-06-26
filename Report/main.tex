@@ -530,6 +530,7 @@ Channel &  \multicolumn{2}{c}{Before Deconvolution} & \multicolumn{2}{c}{After D
 \bottomrule
 \end{tabular}
 \end{table}
+\clearpage
 \subsection*{Manual Deconvolution}
 In the following section we applied manual deconvolution to all 4 images of the Zebrafish. Manual deconvolution has more parameters that need to be manually fine-tuned such as the deconvolution strategy, the background threshold, the number of iterations, and the deconvolution layout. 
 \subsubsection*{Image 1}
@@ -538,27 +539,86 @@ An aggressive strategy for deconvolution was used here with Classic MLE algorith
 \centering
 \subfloat{\label{fig:Before Manual Deconvolution 1}\includegraphics[width=0.45\textwidth]{Report/Images/original/Image_for_Huygens_0_rendering.jpg}}
 \vspace{5 mm}
-\subfloat{\label{fig:After Deconvolution 4}\includegraphics[width=0.45\textwidth]{Report/Images/manu-deconvolved/Image_for_Huygens_3_decon_rendering.jpg}}
-\caption{Automatic deconvolution of Image 4}
-\label{fig:auto-deconvolve-image4}
+\subfloat{\label{fig:After Manual Deconvolution 1}\includegraphics[width=0.45\textwidth]{Report/Images/manual-deconvolved/manual_deconvolution_image0_rendering.jpg}}
+\caption{Manual deconvolution of Image 1}
+\label{fig:manual-deconvolve-image1}
 \end{figure}
-Channel 1: 3175 clipped voxels detected, indicating significant data loss or over-processing. \newline
-Channel 2: 149 clipped voxels detected, indicating moderate data loss or over-processing. \newline
+\\ 
+Channel 1: 3175 clipped voxels detected, indicating significant data loss or over-processing. \\
+Channel 2: 149 clipped voxels detected, indicating moderate data loss or over-processing.\\
+The data loss is seen in the histograms. However, the intensity of the image seems to be reduced, especially in channel 1, as the intensities are lower in the manually deconvolved image. 
+\begin{figure}[h!]
+\centering
+\subfloat{\label{fig:Before Manual Deconvolution Histogram 1}\includegraphics[width=0.45\textwidth]{Report/Images/manual-deconvolved/original_image1_graph.png}}
+\vspace{5 mm}
+\subfloat{\label{fig:After Manual Deconvolution Histogram 1}\includegraphics[width=0.45\textwidth]{Report/Images/manual-deconvolved/deconvolved_image1_graph.png}}
+\caption{Histograms of Image 1 - Before and After Manual Deconvolution}
+\label{fig:manual-deconvolve-image1-histogram}
+\end{figure}
 \subsubsection*{Image 2}
-Channels 0, 1, and 2 use an aggressive strategy with Good's MLE, automatic estimation with lowest background value as 0.1, 20 iterations, 90 sharpness, 0.3 quality threshold, and 1 brick layout. \newline
-Channel 0: 22 clipped voxels detected, less data loss than Image 0.\newline
-Goode MLE requires fewer iterations than Classic MLE, which explains the reduced iteration count.
+A similar aggressive strategy was used for all the channels, but with Good's MLE. An automatic estimation of the background with lowest value as 0.1 was used, as there is not a lot of space. As Good's MLE was used, only 20 iterations were done, with the sharpness increased to +90, the quality threshold set at 0.3 and the brick layout for deconvolution at 1. 
+\begin{figure}[h!]
+\centering
+\subfloat{\label{fig:Before Manual Deconvolution 2}\includegraphics[width=0.45\textwidth]{Report/Images/original/Image_for_Huygens_1_rendering.jpg}}
+\vspace{5 mm}
+\subfloat{\label{fig:After Manual Deconvolution 2}\includegraphics[width=0.45\textwidth]{Report/Images/manual-deconvolved/manual_deconvolution_image1_rendering.jpg}}
+\caption{Manual deconvolution of Image 2}
+\label{fig:manual-deconvolve-image2}
+\end{figure}
+\\ 
+Channel 0: 22 clipped voxels detected, less data loss than Image 0.\\ Other channels did not show any data loss. 
+As there is no significant data loss, the histograms seems to be similar, with a miniscule change in intensities in channel 2. 
+\begin{figure}[h!]
+\centering
+\subfloat{\label{fig:Before Manual Deconvolution Histogram 2}\includegraphics[width=0.45\textwidth]{Report/Images/manual-deconvolved/original_image2_graph.png}}
+\vspace{5 mm}
+\subfloat{\label{fig:After Manual Deconvolution Histogram 2}\includegraphics[width=0.45\textwidth]{Report/Images/manual-deconvolved/deconvolved_image2_graph.png}}
+\caption{Histograms of Image 2 - Before and After Manual Deconvolution}
+\label{fig:manual-deconvolve-image2-histogram}
+\end{figure}\newline
 \subsubsection*{Image 3} \newline
-Channels 0 and 1 use a conservation strategy with Classic MLE, automatic estimation with in/near object background value as 0.05, 20 iterations, 90 sharpness, 0.3 quality threshold, and slice-by-slice layout. \newline
-Channel 0: 141 clipped voxels detected. \newline
-Channel 2 uses an aggressive strategy with Good's MLE and similar settings to Image 1.\newline
+Similar to Image 1, Classic MLE algorithm was used, with a conservative strategy for deconvolution. 
+Channels 0 and 1 use a conservation strategy with Classic MLE, automatic estimation of background was used, with in/near object background value set to 0.05. A classic strategy of iteration with 72 iterations was used, with the brick layout set to slice-by-slice layout. The sharpness and quality threshold remained unchanged \newline
+\begin{figure}[h!]
+\centering
+\subfloat{\label{fig:Before Manual Deconvolution 3}\includegraphics[width=0.45\textwidth]{Report/Images/original/Image_for_Huygens_2_rendering.jpg}}
+\vspace{5 mm}
+\subfloat{\label{fig:After Manual Deconvolution 3}\includegraphics[width=0.45\textwidth]{Report/Images/manual-deconvolved/manual_deconvolution_image2_rendering.jpg}}
+\caption{Manual deconvolution of Image 3}
+\label{fig:manual-deconvolve-image3}
+\end{figure}
+\\ 
+Channel 0: 141 clipped voxels detected.\\ Other channels did not show any data loss. The histograms however, show drop in certain intensities in channel 0 and channel 1. This is noticeable in the image itself, with noise missing in the deconvolved image (in the eye). 
+\begin{figure}[h!]
+\centering
+\subfloat{\label{fig:Before Manual Deconvolution Histogram 3}\includegraphics[width=0.45\textwidth]{Report/Images/manual-deconvolved/original_image3_graph.png}}
+\vspace{5 mm}
+\subfloat{\label{fig:After Manual Deconvolution Histogram 3}\includegraphics[width=0.45\textwidth]{Report/Images/manual-deconvolved/deconvolved_image3_graph.png}}
+\caption{Histograms of Image 3 - Before and After Manual Deconvolution}
+\label{fig:manual-deconvolve-image3-histogram}
+\end{figure}\newline
 \subsubsection*{Image 4}
-Channels 0, 1, and 2 use an aggressive strategy with Classic MLE, automatic estimation with the lowest object background value as 0.7, 72 iterations, 90 sharpness, 0.5 quality threshold, and many bricks layout. \newline
-Channel 2: 14014 clipped voxels detected, indicating severe data loss or over-processing, possibly due to the high number of iterations and aggressive strategy. \newline
-\newline
+As the image of the zebrafish tail, similar parameters as seen in Image 2 are used. However, minor changes were made, such as the background estimation set to 0.5, as there is a lot of background in this image. Furthermore, the quality threshold was set to 0.5, to ensure a good output, and the brick layout to many bricks.  \newline
+\begin{figure}[h!]
+\centering
+\subfloat{\label{fig:Before Manual Deconvolution 4}\includegraphics[width=0.45\textwidth]{Report/Images/original/Image_for_Huygens_3_rendering.jpg}}
+\vspace{5 mm}
+\subfloat{\label{fig:After Manual Deconvolution 4}\includegraphics[width=0.45\textwidth]{Report/Images/manual-deconvolved/manual_deconvolution_image3_rendering.jpg}}
+\caption{Manual deconvolution of Image 4}
+\label{fig:manual-deconvolve-image4}
+\end{figure}
+\\ 
+Channel 2: 14014 clipped voxels detected, indicating severe data loss or over-processing, possibly due to the high number of iterations and aggressive strategy.\\ Only channel 2 exhibited a significant data loss. Other channels did not show any data loss. \\The histograms however, show drop in certain intensities in channel 0. 
+\begin{figure}[h!]
+\centering
+\subfloat{\label{fig:Before Manual Deconvolution Histogram 4}\includegraphics[width=0.45\textwidth]{Report/Images/manual-deconvolved/original_image4_graph.png}}
+\vspace{5 mm}
+\subfloat{\label{fig:After Manual Deconvolution Histogram 4}\includegraphics[width=0.45\textwidth]{Report/Images/manual-deconvolved/deconvolved_image4_graph.png}}
+\caption{Histograms of Image 4 - Before and After Manual Deconvolution}
+\label{fig:manual-deconvolve-image4-histogram}
+\end{figure}
+\\
 The different settings impact the image quality and data preservation. Aggressive strategies and higher iterations often lead to more clipped voxels, indicating potential over-processing and loss of detail. Conservation strategies with fewer iterations tend to preserve more data but may result in less aggressive noise reduction and sharpening. In the end it is a trade-off between more conservation of data (less clipped voxels) and higher quality (sharpening and noise reduction). The choice of deconvolution algorithm (Classic MLE vs. Goode MLE) also influences the outcome, with Goode MLE typically requiring fewer iterations for similar results.
-
-
 
 \subsection*{Visualizations}
 \clearpage
